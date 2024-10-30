@@ -1,5 +1,5 @@
 {% set name = "sqlmesh" %}
-{% set version = "0.122.2" %}
+{% set version = "0.129.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sqlmesh-{{ version }}.tar.gz
-  sha256: b4de73f6fc2c85af408b2d1ea7dbb43e84b514e92ef9c023c6e77705bc2fb308
+  sha256: 0d04147be13591c51fac4c2fb51b9885a1a523e0a75e1ee4415076f746444c77
 
 build:
   noarch: python
@@ -43,7 +43,7 @@ requirements:
     - sqlglot >=25.20.1,<25.21
     - tenacity
   run_constrained:
-    -  sqlglotrs >=0.2.12
+    - sqlglotrs >=0.2.12
 
 test:
   imports:
