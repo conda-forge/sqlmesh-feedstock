@@ -15,16 +15,16 @@ build:
     - sqlmesh = sqlmesh.cli.main:cli
     - sqlmesh_cicd = sqlmesh.cicd.bot:bot
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools
     - setuptools-scm
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - astor
     - click
     - croniter
@@ -55,6 +55,7 @@ test:
     - sqlmesh --help
     - sqlmesh_cicd --help
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
