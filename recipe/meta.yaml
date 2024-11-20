@@ -40,7 +40,7 @@ requirements:
     - requests
     - rich
     - ruamel.yaml
-    #- sqlglot >=25.31.4,<25.32.0
+    - sqlglot >=25.31.4,<25.32.0
 # https://github.com/TobikoData/sqlmesh/blob/main/setup.py#L50
   #   "sqlglot[rs]~=25.31.4"
     - sqlglotrs >=0.2.14
