@@ -41,10 +41,10 @@ requirements:
     - rich
     - ruamel.yaml
     - sqlglot >=25.32.1,<25.33.0
-# https://github.com/TobikoData/sqlmesh/blob/main/setup.py#L50
-  #   "sqlglot[rs]~=25.31.4"
-# https://github.com/tobymao/sqlglot/blob/main/CHANGELOG.md
-# https://github.com/tobymao/sqlglot/blob/v25.32.1/sqlglotrs/Cargo.toml
+    # https://github.com/TobikoData/sqlmesh/blob/main/setup.py#L50
+    #   "sqlglot[rs]~=25.31.4"
+    # https://github.com/tobymao/sqlglot/blob/main/CHANGELOG.md
+    # https://github.com/tobymao/sqlglot/blob/v25.32.1/sqlglotrs/Cargo.toml
     - sqlglotrs >=0.3.0
     - tenacity
 
