@@ -1,5 +1,5 @@
 {% set name = "sqlmesh" %}
-{% set version = "0.140.1" %}
+{% set version = "0.142.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sqlmesh-{{ version }}.tar.gz
-  sha256: 3ea29bee036ef3c53f25bfe1f44e7646836fc83572f7739c512116f424c788bc
+  sha256: 77ae4d50e04eab63e8417f9644ac2ccaaf31d5659ef1fcad1c7501811c5b3f35
 
 build:
   noarch: python
@@ -24,6 +24,7 @@ requirements:
     - setuptools-scm
     - pip
   run:
+    - time-machine
     - python >={{ python_min }}
     - astor
     - click
@@ -36,11 +37,11 @@ requirements:
     - ipywidgets
     - jinja2
     - pandas
-    - pydantic
+    - pydantic >=2.0.0
     - requests
     - rich
     - ruamel.yaml
-    - sqlglot >=26.0.0,<26.1.dev0
+    - sqlglot >=26.0.1,<26.1.dev0
     # https://github.com/TobikoData/sqlmesh/blob/main/setup.py#L50
     #   "sqlglot[rs]~=25.31.4"
     # https://github.com/tobymao/sqlglot/blob/main/CHANGELOG.md
