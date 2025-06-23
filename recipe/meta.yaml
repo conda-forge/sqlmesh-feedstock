@@ -1,5 +1,5 @@
 {% set name = "sqlmesh" %}
-{% set version = "0.144.0" %}
+{% set version = "0.195.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sqlmesh-{{ version }}.tar.gz
-  sha256: 5b8ce6d501aa4e470878920567d6acc32c0779eae5ac12ac949e4bbeae815af2
+  sha256: 40e67fc7482db3fdb0dd2e9fc2ba00c8c8d8fcd77b0b91017afc4231067df1ce
 
 build:
   noarch: python
@@ -24,30 +24,26 @@ requirements:
     - setuptools-scm
     - pip
   run:
-    - time-machine
     - python >={{ python_min }}
     - astor
     - click
     - croniter
-    - python-duckdb !=0.10.3
+    - python-duckdb >=0.10.0,!=0.10.3
     - dateparser
-    - freezegun
     - hyperscript >=0.1.0
     - importlib-metadata
     - ipywidgets
     - jinja2
+    - packaging
     - pandas
     - pydantic >=2.0.0
     - requests
     - rich
     - ruamel.yaml
-    - sqlglot >=26.0.1,<26.1.dev0
-    # https://github.com/TobikoData/sqlmesh/blob/main/setup.py#L50
-    #   "sqlglot[rs]~=25.31.4"
-    # https://github.com/tobymao/sqlglot/blob/main/CHANGELOG.md
-    # https://github.com/tobymao/sqlglot/blob/v25.32.1/sqlglotrs/Cargo.toml
-    - sqlglotrs >=0.3.0
+    - sqlglot >=26.30.0,<26.31.dev0
     - tenacity
+    - time-machine
+    - json_stream
 
 test:
   imports:
