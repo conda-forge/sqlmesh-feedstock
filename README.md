@@ -3,11 +3,11 @@ About sqlmesh-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/sqlmesh-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/TobikoData/sqlmesh
+Home: https://github.com/TobikoData/sqlmes
 
 Package license: Apache-2.0
 
-Summary: Efficient data transformation and modeling framework that is backwards compatible with dbt.
+Summary: Next-generation data transformation framework
 
 Current build status
 ====================
