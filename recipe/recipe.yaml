@@ -11,10 +11,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/sqlmesh-${{ version }}.tar.gz
-  sha256: c31c8cee87d333cb5127b9273eec0e05e793db3ab8715798dc87fba7a48579b0
+  sha256: e09bed5024451cbdaa0de4081e29f8a1b526363d5bb37c75fa3b54e03d2cdbca
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
