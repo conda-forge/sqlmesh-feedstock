@@ -1,0 +1,76 @@
+schema_version: 1
+
+context:
+  name: sqlmesh
+  version: 0.196.3
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/sqlmesh-${{ version }}.tar.gz
+  sha256: c2d9471829fca3169d6123ee843c6e6777a3e73aae2ccac85449687123ac3068
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - sqlmesh = sqlmesh.cli.main:cli
+      - sqlmesh_cicd = sqlmesh.cicd.bot:bot
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools
+    - setuptools-scm
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - astor
+    - click
+    - croniter
+    - python-duckdb >=0.10.0,!=0.10.3
+    - dateparser
+    - hyperscript >=0.1.0
+    - importlib-metadata
+    - ipywidgets
+    - jinja2
+    - packaging
+    - pandas
+    - pydantic >=2.0.0
+    - requests
+    - rich
+    - ruamel.yaml
+    - sqlglot >=26.30.0,<26.31.dev0
+    - tenacity
+    - time-machine
+    - json_stream
+
+tests:
+  - python:
+      imports:
+        - sqlmesh
+        - web
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+        - pip
+    script:
+      - pip check
+      - sqlmesh --help
+      - sqlmesh_cicd --help
+
+about:
+  summary: Efficient data transformation and modeling framework that is backwards compatible with dbt.
+  license: Apache-2.0
+  license_file: LICENSE
+  homepage: https://github.com/TobikoData/sqlmesh
+
+extra:
+  recipe-maintainers:
+    - rxm7706
+    - fhoehle
