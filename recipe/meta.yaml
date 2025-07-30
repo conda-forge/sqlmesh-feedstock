@@ -1,5 +1,5 @@
 {% set name = "sqlmesh" %}
-{% set version = "0.205.0" %}
+{% set version = "0.206.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sqlmesh-{{ version }}.tar.gz
-  sha256: 2ed081d6bcc2fe8f0eed9e3535ed97722772a1c8bebe888993a733c66c0a0a9e
+  sha256: 20834a7856ac85546547ab5bb3bba0b88fe4d0264303625a93d5e4c792db4b8c
 
 build:
   noarch: python
@@ -30,7 +30,7 @@ requirements:
     - click
     - croniter
     - python-duckdb >=0.10.0,!=0.10.3
-    - dateparser
+    - dateparser <=1.2.1
     - hyperscript >=0.1.0
     - importlib-metadata
     - ipywidgets
@@ -41,7 +41,7 @@ requirements:
     - requests
     - rich
     - ruamel.yaml
-    - sqlglot >=27.4.1,<27.5.dev0
+    - sqlglot >=27.5.1,<27.6.dev0
     - tenacity
     - time-machine
     - json_stream
