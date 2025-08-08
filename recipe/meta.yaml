@@ -1,5 +1,5 @@
 {% set name = "sqlmesh" %}
-{% set version = "0.207.0" %}
+{% set version = "0.209.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sqlmesh-{{ version }}.tar.gz
-  sha256: 0561c1c85e62eeba4c365c1305404024034d5e8f09a27a754c145a71a68ca307
+  sha256: 2a0bc3c23edbc3a16478c048081cf332cb61d3c0d1712278968ef9aec55684f5
 
 build:
   noarch: python
