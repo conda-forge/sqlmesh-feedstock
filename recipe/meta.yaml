@@ -1,5 +1,5 @@
 {% set name = "sqlmesh" %}
-{% set version = "0.222.0" %}
+{% set version = "0.235.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/sqlmesh-{{ version }}.tar.gz
-  sha256: 5a862ec8e430d3eea2e4946e601bde73470f0296db7d1d7866d061c1293b99c0
+  sha256: 370d16e0acbcf7a02fc07bacc9f637318271bf30074b1c0735cd4fe400b3cb10
 
 build:
   noarch: python
@@ -37,12 +37,12 @@ requirements:
     - ipywidgets
     - jinja2
     - packaging
-    - pandas
+    - pandas <3.0.0
     - pydantic >=2.0.0
     - requests
     - rich
     - ruamel.yaml
-    - sqlglot >=27.17.0,<27.18.dev0
+    - sqlglot >=30.8.0,<30.9.dev0
     - tenacity
     - time-machine
     - json_stream
