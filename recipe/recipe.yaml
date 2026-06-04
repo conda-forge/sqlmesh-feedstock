@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   name: sqlmesh
-  version: "0.231.1"
+  version: 0.235.3
 
 package:
   name: ${{ name|lower }}
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/sqlmesh-${{ version }}.tar.gz
-  sha256: 20bb81b0745d18f9f47743ab354ae52226f0bbe63717527f064363e1fea96140
+  sha256: 370d16e0acbcf7a02fc07bacc9f637318271bf30074b1c0735cd4fe400b3cb10
 
 build:
   number: 0
@@ -47,11 +47,10 @@ requirements:
     - requests
     - rich
     - ruamel.yaml
-    - sqlglot >=28.10.1,<28.11.dev0
+    - sqlglot >=30.8.0,<30.9.dev0
     - tenacity
     - time-machine
     - json_stream
-
 tests:
   - python:
       imports:
